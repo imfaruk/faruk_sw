@@ -27,7 +27,7 @@ class TagsCreateService
   end
 
   def update_tags
-    # `update_all` does not hit callbacks but in this scenaio we can skip that in favour of performance
+    # `update_all` does not hit callbacks but in this scenario we can skip that in favour of performance
     existing_tags.update_all('count = count + 1')
   end
 
