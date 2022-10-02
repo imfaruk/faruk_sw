@@ -8,7 +8,7 @@ class TagsCreateService
   end
 
   def call
-    return if tags.empty?
+    return if tags.blank?
 
     update_tags
     create_tags

@@ -27,6 +27,11 @@ RSpec.describe API::Resources::Tickets do
         expect(response.status).to eq(422)
       end
 
+      it 'does not require tags' do
+        response = post request_url, ticket_params.except(:tags)
+        expect(response.status).to eq(201)
+      end
+
       it 'requires at most 5 tags' do
         tags = %w[a b c d e f]
         params = ticket_params.merge(tags:)
