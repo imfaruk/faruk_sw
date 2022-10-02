@@ -12,7 +12,7 @@ module API
         end
 
         post do
-          ticket = FactoryBot.create(:ticket)
+          ticket = ::TicketCreateEntrypoint.call(permitted_params)
           present ticket, with: API::Entities::Ticket
         end
       end
